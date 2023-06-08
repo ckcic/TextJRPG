@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="jp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text JRPG</title>
+    <link rel="stylesheet" href="./TJRPG.css">
+</head>
+
+<body>
+    <div class="wrap" id="screen">
+        <div class="status" id="hero-stat" style="display: none">
+            <div class="info info-basic">
+                <div class="status-name" id="hero-name">플레이어</div>
+                <div class="status-job"></div>
+                <div class="status-money" id="hero-gold">0</div>
+            </div>
+            <div class="info info-level">
+                <div class="status-level">
+                    <strong class="title">LEVEL</strong>
+                    <div class="contents" id="hero-level"></div>
+                </div>
+                <div class="status-exp">
+                    <strong class="title">EXP</strong>
+                    <div class="contents">
+                        <div class="bar">
+                            <progress max="100" value="20" id="hero-expBar"></progress>
+                            <div class="expText" id="hero-xp"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="info info-health">
+                <div class="status-hp">
+                    <strong class="title">HP</strong>
+                    <div class="contents">
+                        <div class="bar">
+                            <meter min="0" max="100" low="25" high="75" optimum="80" value="0" id="hero-hpBar"></meter>
+                            <div class="hpText" id="hero-hp"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="info info-ability">
+                <div class="status-str">
+                    <div class="title">STR</div>
+                    <div class="str-val" id="hero-str">5</div>
+                </div>
+                <div class="status-dex">
+                    <div class="title">DEX</div>
+                    <div class="dex-val" id="hero-dex">5</div>
+                </div>
+                <div class="status-int">
+                    <div class="title">INT</div>
+                    <div class="int-val" id="hero-int">5</div>
+                </div>
+            </div>
+            <div class="info info-history">
+                <div class="status-atk">
+                    <div class="title">ATK</div>
+                    <div class="atk-val" id="hero-atk"></div>
+                </div>
+                <div class="status-def">
+                    <div class="title">DEF</div>
+                    <div class="def-val" id="hero-def">0</div>
+                </div>
+            </div>
+        </div>
+        <div class="menuPosition">
+            <div id="main-screen">
+                <ul>
+                    <li id="start"><a href="">Start</a></li>
+                    <li id="load"><a href="">Load</a></li>
+                    <li id="exit"><a href="">Exit</a></li>
+                </ul>
+            </div>
+            <form id="start-screen" style="display: none">
+                <input type="text" id="name-input" placeholder="主人公の名前を付けてください!">
+                <button id="name-button">入力</button>
+            </form>
+            <div id="game-menu" style="display:none">
+                <ul>
+                    <li id="menu-1"><a href="">冒険</a></li>
+                    <li id="menu-2"><a href="">旅館</a></li>
+                    <li id="menu-3"><a href="">終了</a></li>
+                </ul>
+            </div>
+            <div id="battle-menu" style="display:none">
+                <ul>
+                    <li id="battle-1"><a href="">攻撃</a></li>
+                    <li id="battle-2"><a href="">回復</a></li>
+                    <li id="battle-3"><a href="">逃げる</a></li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <div id="message"></div>
+            <div id="monster-stat">
+                <abbr title="" id="monster-status"><span id="monster-name"></span></abbr>
+                <span id="monster-hp"></span>
+                <span id="monster-mp"></span>
+                <span id="monster-atk"></span>
+                <span id="monster-def"></span>
+            </div>
+        </div>
+    </div>
+    <script src="TJRPG.js"></script>
+</body>
+
+</html>

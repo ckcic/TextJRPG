@@ -1,0 +1,298 @@
+* {
+  box-sizing: border-box;
+  color: #fff;
+}
+
+@font-face {
+  font-family: "Retro";
+  src: url("./Silver.ttf") format("truetype");
+}
+
+body {
+  background: #1a1e23;
+  font-family: "Retro", "Lato", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 0.2em;
+  font-size: 20px;
+}
+
+.wrap {
+  max-width: 1300px;
+  min-width: 820px;
+  margin: 0 auto;
+  padding: 0px 30px;
+}
+
+strong {
+  display: block;
+}
+
+.info-basic {
+  flex-basis: 5%;
+}
+
+.info-health {
+  flex-basis: 20%;
+}
+
+.info-level {
+  flex-basis: 12%;
+}
+
+.info-history {
+  flex-basis: 5%;
+}
+
+.status {
+  color: #333;
+  font-size: 14px;
+  display: flex;
+  margin-top: 40px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid rgba(196, 196, 196, 0.653);
+}
+
+.status-name {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.status-money:after {
+  display: inline-block;
+  margin-left: 4px;
+  color: gold;
+  content: " Gold";
+}
+
+.status-job {
+  margin: 4px 0;
+}
+
+.status .info {
+  flex-grow: 1;
+  padding: 0 30px;
+}
+
+.status-level,
+.status-exp {
+  display: flex;
+  align-items: flex-end;
+}
+
+.status-level .title,
+.status-exp .title {
+  margin-right: 12px;
+}
+
+.status-level .contents,
+.status-exp .contents {
+  font-size: 120%;
+}
+
+.status-exp {
+  align-items: center;
+  margin-top: 4px;
+  padding-bottom: 15px;
+}
+
+.status-exp .contents {
+  position: relative;
+  width: 100%;
+}
+
+.status-exp progress {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+}
+
+.status-exp progress::-webkit-progress-bar {
+  width: 100%;
+  height: 100%;
+  background-color: #e4e4e4;
+  border-radius: 20px;
+}
+
+.status-exp progress[value]::-webkit-progress-value {
+  background-image: -webkit-linear-gradient(
+      -45deg,
+      transparent 33%,
+      rgba(0, 0, 0, 0.1) 33%,
+      rgba(0, 0, 0, 0.1) 66%,
+      transparent 66%
+    ),
+    -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25)),
+    -webkit-linear-gradient(left, #09c, #f44);
+  border-radius: 20px;
+  background-size: 35px 20px, 100% 100%, 100% 100%;
+}
+
+.status-exp .expText {
+  margin-top: 5px;
+  font-size: 60%;
+  text-align: center;
+}
+
+.status-hp {
+  position: relative;
+}
+
+.status-hp .title {
+  font-size: 105%;
+  margin-top: 2px;
+}
+
+.status-hp .contents {
+  margin-top: 5px;
+  position: relative;
+  width: 100%;
+}
+
+.status-hp .bar {
+  width: 100%;
+  height: 10px;
+}
+
+.status-hp meter {
+  width: 100%;
+  height: 2vh;
+  margin-bottom: 5%;
+}
+
+.status-hp .hpText {
+  margin-top: 5px;
+  font-size: 60%;
+  text-align: center;
+}
+
+.info-ability [class^="status-"],
+.info-history [class^="status-"] {
+  display: flex;
+}
+
+.info-ability .title,
+.info-history .title {
+  margin-bottom: 4px;
+  margin-right: 8px;
+}
+
+.info-ability .title {
+  min-width: 42px;
+  margin-right: 10px;
+}
+
+.info-history .title {
+  min-width: 30px;
+}
+
+.info-history [class$="val"] {
+  color: rgb(46, 255, 5);
+}
+
+.info-history .status-atk,
+.info-history .status-def {
+  text-align: right;
+}
+
+.info-history .status-atk:after,
+.info-history .status-def:after {
+  display: inline-block;
+  content: "";
+}
+
+.menuPosition {
+  min-height: 58px;
+  margin: 40px 0 10px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+}
+
+li {
+  margin: 0 40px 0 0;
+  opacity: 0.4;
+  transition: all 0.4s ease;
+}
+
+li:hover {
+  opacity: 0.7;
+}
+
+li:active {
+  opacity: 1;
+}
+
+li:last-child {
+  margin-right: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  display: block;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  font-size: 20px;
+}
+
+abbr {
+  text-decoration: none;
+}
+
+#hero-stat {
+  min-height: 20%;
+  font-weight: 600;
+  font-size: 20px;
+  align-self: center;
+}
+
+#name-input {
+  min-width: 200px;
+  color: #000;
+}
+
+#name-button {
+  border-radius: 25%;
+  background-color: #333;
+}
+
+@media (max-width: 860px) {
+  .wrap {
+    min-width: auto;
+    box-sizing: border-box;
+    padding: 20px 20px 0;
+  }
+  .status {
+    flex-wrap: wrap;
+    margin-top: 0;
+  }
+  .info {
+    flex-basis: 50%;
+    box-sizing: border-box;
+    padding: 0 20px !important;
+    margin-bottom: 20px;
+    font-size: 12px;
+  }
+  .info:nth-child(3),
+  .info:nth-child(4) {
+    margin-bottom: 30px;
+  }
+  .menuPosition {
+    margin: 20px 0 10px;
+    min-height: 50px;
+  }
+}
